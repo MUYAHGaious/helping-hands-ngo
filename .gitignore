@@ -1,0 +1,29 @@
+# dependencies and environments
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+# builds and caches
+.next/
+dist/
+build/
+out/
+.turbo/
+.playwright-mcp/
+# secrets: commit the .example files only
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*service-account*.json
+# local databases and media
+*.db
+*.sqlite
+*.mp4
+*.mov
+*.log
+.DS_Store
+Thumbs.db

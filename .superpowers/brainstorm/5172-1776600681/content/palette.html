@@ -1,0 +1,94 @@
+<h2>Pick a color palette</h2>
+<p class="subtitle">Same layout as the Kalypsia reference — just re-skinned. Click a card to choose. The accent colors replace the yellow/green/orange brush strokes and CTAs.</p>
+
+<style>
+  .pal-card { cursor: pointer; border: 2px solid transparent; border-radius: 14px; overflow: hidden; transition: transform .2s, border-color .2s; }
+  .pal-card:hover { transform: translateY(-4px); }
+  .pal-card.selected { border-color: #000; }
+  .pal-preview { height: 180px; display: flex; flex-direction: column; }
+  .pal-strip { flex: 1; display: flex; }
+  .pal-strip > div { flex: 1; }
+  .pal-sample { padding: 18px 20px; font-family: Georgia, serif; }
+  .pal-sample h4 { font-size: 22px; line-height: 1.15; font-weight: 700; margin: 0 0 8px; }
+  .pal-sample h4 .u { padding-bottom: 2px; background-repeat: no-repeat; background-position: 0 100%; background-size: 100% 8px; }
+  .pal-sample .btn { display: inline-block; padding: 6px 14px; border-radius: 20px; font-size: 11px; font-family: system-ui, sans-serif; font-weight: 600; margin-top: 6px; margin-right: 6px; }
+  .pal-body { padding: 16px 18px; font-family: system-ui, sans-serif; }
+  .pal-body h3 { margin: 0 0 6px; font-size: 17px; }
+  .pal-body .swatches { display: flex; gap: 6px; margin-top: 10px; }
+  .pal-body .swatches div { width: 22px; height: 22px; border-radius: 50%; border: 1px solid rgba(0,0,0,.08); }
+  .pal-body .hex { font-family: ui-monospace, monospace; font-size: 11px; color: #888; margin-top: 6px; }
+</style>
+
+<div class="cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px">
+
+  <div class="pal-card card" data-choice="ocean" onclick="toggleSelect(this)">
+    <div class="pal-preview" style="background:#F4E3C7;">
+      <div class="pal-sample" style="color:#0E2A33;">
+        <h4>A world <span class="u" style="background-image:linear-gradient(#FF6B6B,#FF6B6B);">where hope</span> lives.</h4>
+        <span class="btn" style="background:#0E7C86;color:#fff">Donate now</span>
+        <span class="btn" style="background:#FF6B6B;color:#fff">Volunteer</span>
+      </div>
+      <div class="pal-strip"><div style="background:#0E7C86"></div><div style="background:#FF6B6B"></div><div style="background:#F4E3C7"></div><div style="background:#0E2A33"></div></div>
+    </div>
+    <div class="pal-body card-body">
+      <h3>A — Ocean / Hope</h3>
+      <p>Calm, trustworthy. Teal primary with coral warmth.</p>
+      <div class="swatches"><div style="background:#0E7C86"></div><div style="background:#FF6B6B"></div><div style="background:#F4E3C7"></div><div style="background:#0E2A33"></div></div>
+      <div class="hex">#0E7C86 · #FF6B6B · #F4E3C7 · #0E2A33</div>
+    </div>
+  </div>
+
+  <div class="pal-card card" data-choice="sunset" onclick="toggleSelect(this)">
+    <div class="pal-preview" style="background:#FFF4E6;">
+      <div class="pal-sample" style="color:#2B1140;">
+        <h4>A world <span class="u" style="background-image:linear-gradient(#FFB347,#FFB347);">where hope</span> lives.</h4>
+        <span class="btn" style="background:#5B2A86;color:#fff">Donate now</span>
+        <span class="btn" style="background:#E94F6B;color:#fff">Volunteer</span>
+      </div>
+      <div class="pal-strip"><div style="background:#5B2A86"></div><div style="background:#E94F6B"></div><div style="background:#FFB347"></div><div style="background:#2B1140"></div></div>
+    </div>
+    <div class="pal-body card-body">
+      <h3>B — Sunset / Warmth</h3>
+      <p>Bold, empathetic. Plum + rose + amber glow.</p>
+      <div class="swatches"><div style="background:#5B2A86"></div><div style="background:#E94F6B"></div><div style="background:#FFB347"></div><div style="background:#2B1140"></div></div>
+      <div class="hex">#5B2A86 · #E94F6B · #FFB347 · #2B1140</div>
+    </div>
+  </div>
+
+  <div class="pal-card card" data-choice="earth" onclick="toggleSelect(this)">
+    <div class="pal-preview" style="background:#F5EDDA;">
+      <div class="pal-sample" style="color:#1A1A1A;">
+        <h4>A world <span class="u" style="background-image:linear-gradient(#D4A84B,#D4A84B);">where hope</span> lives.</h4>
+        <span class="btn" style="background:#2D5F3F;color:#fff">Donate now</span>
+        <span class="btn" style="background:#C1592F;color:#fff">Volunteer</span>
+      </div>
+      <div class="pal-strip"><div style="background:#2D5F3F"></div><div style="background:#C1592F"></div><div style="background:#D4A84B"></div><div style="background:#1A1A1A"></div></div>
+    </div>
+    <div class="pal-body card-body">
+      <h3>C — Earth / Roots <em style="color:#2D5F3F">· my rec</em></h3>
+      <p>Grounded, organic. Forest + terracotta + ochre. Feels like the land.</p>
+      <div class="swatches"><div style="background:#2D5F3F"></div><div style="background:#C1592F"></div><div style="background:#D4A84B"></div><div style="background:#1A1A1A"></div></div>
+      <div class="hex">#2D5F3F · #C1592F · #D4A84B · #1A1A1A</div>
+    </div>
+  </div>
+
+  <div class="pal-card card" data-choice="midnight" onclick="toggleSelect(this)">
+    <div class="pal-preview" style="background:#0D1B2A; color:#EAE0D5;">
+      <div class="pal-sample">
+        <h4 style="color:#EAE0D5;">A world <span class="u" style="background-image:linear-gradient(#E0A458,#E0A458);">where hope</span> lives.</h4>
+        <span class="btn" style="background:#E0A458;color:#0D1B2A">Donate now</span>
+        <span class="btn" style="background:#3A86FF;color:#fff">Volunteer</span>
+      </div>
+      <div class="pal-strip"><div style="background:#0D1B2A"></div><div style="background:#E0A458"></div><div style="background:#3A86FF"></div><div style="background:#EAE0D5"></div></div>
+    </div>
+    <div class="pal-body card-body">
+      <h3>D — Midnight / Editorial</h3>
+      <p>Dark mode, premium. Navy + gold + electric blue accents. Bolder departure from the reference.</p>
+      <div class="swatches"><div style="background:#0D1B2A"></div><div style="background:#E0A458"></div><div style="background:#3A86FF"></div><div style="background:#EAE0D5"></div></div>
+      <div class="hex">#0D1B2A · #E0A458 · #3A86FF · #EAE0D5</div>
+    </div>
+  </div>
+
+</div>
+
+<p style="margin-top:28px;color:#666;font-size:13px;">Each card shows what the hero headline + donate/volunteer buttons feel like in that palette. Click one, or tell me in the terminal.</p>

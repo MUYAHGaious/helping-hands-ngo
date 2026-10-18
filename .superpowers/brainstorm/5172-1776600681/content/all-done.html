@@ -1,0 +1,79 @@
+<div style="max-width:840px;margin:40px auto;padding:0 20px;font-family:Instrument Sans,system-ui,sans-serif">
+
+  <div style="padding:32px 36px;background:linear-gradient(135deg,#0E7C86 0%,#0a6870 100%);border-radius:20px;color:#fff">
+    <div style="font-size:12px;opacity:0.8;letter-spacing:.25em;text-transform:uppercase">All three phases · shipped</div>
+    <h2 style="color:#fff;margin:8px 0 4px;font-family:Georgia,serif;font-size:38px;font-weight:500">Helping Hands Association</h2>
+    <p style="color:rgba(255,255,255,0.85);margin:0">Full-stack NGO platform — running locally and pushed to GitHub.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px">
+    <a href="http://localhost:3000" target="_blank" style="text-decoration:none;padding:22px;background:#fff;border:2px solid #0E7C86;border-radius:16px;color:#0E2A33">
+      <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#0E7C86">Public site</div>
+      <div style="font-family:Georgia,serif;font-size:22px;margin-top:6px;font-weight:600">localhost:3000</div>
+      <div style="font-size:12px;color:#6B7A80;margin-top:4px">19 pages</div>
+    </a>
+    <a href="http://localhost:3000/dashboard" target="_blank" style="text-decoration:none;padding:22px;background:#fff;border:2px solid #FF6B6B;border-radius:16px;color:#0E2A33">
+      <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#FF6B6B">Staff dashboard</div>
+      <div style="font-family:Georgia,serif;font-size:22px;margin-top:6px;font-weight:600">localhost:3000/dashboard</div>
+      <div style="font-size:12px;color:#6B7A80;margin-top:4px">Login: admin@helpinghands.org / admin12345</div>
+    </a>
+    <a href="http://localhost:8000/docs" target="_blank" style="text-decoration:none;padding:22px;background:#fff;border:2px solid #0E2A33;border-radius:16px;color:#0E2A33">
+      <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase">API docs</div>
+      <div style="font-family:Georgia,serif;font-size:22px;margin-top:6px;font-weight:600">localhost:8000/docs</div>
+      <div style="font-size:12px;color:#6B7A80;margin-top:4px">FastAPI · 22 endpoints · JWT auth</div>
+    </a>
+    <a href="http://localhost:8000/admin" target="_blank" style="text-decoration:none;padding:22px;background:#F4E3C7;border-radius:16px;color:#0E2A33">
+      <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase">CMS admin</div>
+      <div style="font-family:Georgia,serif;font-size:22px;margin-top:6px;font-weight:600">localhost:8000/admin</div>
+      <div style="font-size:12px;color:#6B7A80;margin-top:4px">SQLAdmin · 10 model views</div>
+    </a>
+  </div>
+
+  <h3 style="font-family:Georgia,serif;font-size:22px;margin:36px 0 12px">Phase summary</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+    <div style="padding:18px;background:#F0EADB;border-radius:14px">
+      <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#0E7C86">Phase 1</div>
+      <div style="font-family:Georgia,serif;font-size:16px;margin:4px 0 8px;font-weight:600">Core site</div>
+      <div style="font-size:12px;color:#555;line-height:1.6">Home · About · Programs · Get Involved · Contact · Donate. Stripe. Volunteer + contact + newsletter. SQLAdmin basic auth.</div>
+    </div>
+    <div style="padding:18px;background:#FFE8E8;border-radius:14px">
+      <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#FF6B6B">Phase 2</div>
+      <div style="font-family:Georgia,serif;font-size:16px;margin:4px 0 8px;font-weight:600">Content</div>
+      <div style="font-size:12px;color:#555;line-height:1.6">Blog + detail · Events + RSVP · Projects + detail · Team · Transparency · Partners · Resources. Markdown rendering. Seeded content.</div>
+    </div>
+    <div style="padding:18px;background:#E0F0F2;border-radius:14px">
+      <div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#0E7C86">Phase 3</div>
+      <div style="font-family:Georgia,serif;font-size:16px;margin:4px 0 8px;font-weight:600">Platform</div>
+      <div style="font-size:12px;color:#555;line-height:1.6">JWT auth (register/login) · /account portal (donations, RSVPs, volunteer status) · /dashboard analytics · paid event tickets via Stripe.</div>
+    </div>
+  </div>
+
+  <h3 style="font-family:Georgia,serif;font-size:22px;margin:36px 0 12px">Live routes — 22 pages</h3>
+  <pre style="background:#0E2A33;color:#e8f6f7;padding:18px 22px;border-radius:14px;font-size:12px;line-height:1.7;font-family:ui-monospace,monospace;overflow-x:auto;margin:0">Public:                      Auth:                         Content:
+/              home          /login                        /blog · /blog/[slug]
+/about                       /signup                       /events · /events/[slug]
+/programs                    /account       (members)      /projects · /projects/[slug]
+/get-involved                /dashboard     (staff only)   /team · /transparency
+/get-involved/volunteer                                    /partners · /resources
+/contact                     API:
+/donate                      POST /api/auth/{register,login}
+/donate/success              GET  /api/auth/me
+/donate/cancel               GET  /api/me/{donations,registrations,volunteer}
+                             GET  /api/analytics/dashboard  (admin)</pre>
+
+  <h3 style="font-family:Georgia,serif;font-size:22px;margin:36px 0 12px">GitHub</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <a href="https://github.com/MUYAHGaious/hh-frontend" target="_blank" style="text-decoration:none;padding:16px 20px;background:#fff;border:1px solid #e9e2d2;border-radius:12px;color:#0E2A33;font-size:14px">github.com/MUYAHGaious/<strong>hh-frontend</strong></a>
+    <a href="https://github.com/MUYAHGaious/hh-backend" target="_blank" style="text-decoration:none;padding:16px 20px;background:#fff;border:1px solid #e9e2d2;border-radius:12px;color:#0E2A33;font-size:14px">github.com/MUYAHGaious/<strong>hh-backend</strong></a>
+  </div>
+
+  <h3 style="font-family:Georgia,serif;font-size:22px;margin:36px 0 12px">What client still needs to plug in</h3>
+  <ul style="line-height:1.9;color:#334;font-size:14px">
+    <li>Real <code>STRIPE_SECRET_KEY</code> + <code>STRIPE_WEBHOOK_SECRET</code> to accept live donations and paid tickets</li>
+    <li>Real <code>RESEND_API_KEY</code> + verified sending domain for transactional email</li>
+    <li>Real mission copy, team photos, program photography</li>
+    <li>Deploy: Vercel (frontend) + Railway/Render (FastAPI + Postgres)</li>
+    <li>Rotate the dev admin password (<code>admin12345</code>) before first deploy</li>
+  </ul>
+
+</div>
